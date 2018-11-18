@@ -3,10 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import "./assets/styles/reset.css"
-import "./assets/styles/border.css"
+import fastClick from 'fastclick'
+import "styles/reset.css"
+import "styles/border.css"
+import "styles/iconfont.css"
 
 Vue.config.productionTip = false
+//引入fastclick处理 移动端300ms点击事件的延迟
+fastClick.attach(document.body)
 
 new Vue({
   el: '#app',
