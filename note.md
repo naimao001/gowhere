@@ -19,6 +19,12 @@
 ## 首页轮播图
   - 先在码云上建了一个分支(index-swiper) 然后拉倒本地 切换到分支 写代码
   - 轮播图使用的是Vue-Awesome-Swiper 装的版本是2.6.7的
+  - 轮播图小点想变成白色 得该样式 但是轮播图内每一项又是一个子组件 由于作用域问题 所以要使用样式穿透(>>>)
+  - 网速较慢 时 下面的元素可能会补位上去 所以得先占位 又得符合图片比 
+  - 做完莫得问题就 合并分支 
+    + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
+    + 同步完先切换到主分支 git checkout master
+    + 再将index-swiper合并到主分支 git merge origin/index-swiper
 
   
 
