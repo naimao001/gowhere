@@ -25,6 +25,11 @@
     + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
     + 同步完先切换到主分支 git checkout master
     + 再将index-swiper合并到主分支 git merge origin/index-swiper
+---
+## 首页图标区域导航 (多出图标要能横向区域滚动)
+  - 先在码云上建了一个分支(index-icon) 然后拉倒本地 切换到分支 写代码
+  - 先把基础布局写好 再嵌入swiper 让其能在超过8个图标时 能区域滚动
+  - 得先把用计算属性将总的图片数组 进行一定的处理
+  - 根据总图标个数 将数组分成几个 将总数组遍历 (Math.floor(index/8))
 
-  
 

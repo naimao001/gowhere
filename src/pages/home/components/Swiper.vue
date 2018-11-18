@@ -1,14 +1,13 @@
 <template>
   <div class="wallpaper">
     <swiper :options="swiperOption">
-      <!-- slides -->
+      
       <swiper-slide v-for="item in swiperList" :key="item.id">
-        <img class="swiper-slide-img" src="http://img1.qunarzz.com/piao/fusion/1811/68/c66e4cde1ee62602.jpg_750x200_e9b97acd.jpg" alt="">
+        <img class="swiper-slide-img" :src="item.imgUrl" alt="">
       </swiper-slide>
-      <!-- Optional controls -->
+      
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
-    test
   </div>
 </template>
 
@@ -42,12 +41,13 @@ export default {
 }
 
 .wallpaper {
-  //这5个是在网速慢的情况下 先占位 
+  // 这5个是在网速慢的情况下 先占位
   overflow: hidden;
   width: 100%;
   height: 0;
-  padding-bottom: 31.25%;
-  background #eee;
+  padding-bottom: 27.25%;
+  background: #eee;
+
   .swiper-slide-img {
     width: 100%;
   }
