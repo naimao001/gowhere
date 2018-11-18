@@ -1,6 +1,7 @@
 # gowhere
 
 > A Vue.js project 
+
 > 项目流程 进入note.md
 
 ## Build Setup

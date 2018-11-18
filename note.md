@@ -17,7 +17,7 @@
   - 别名在webpack-base中设置
 ---
 ## 首页轮播图
-  - 先在码云上建了一个分支(index-swiper) 然后拉倒本地 切换到分支 写代码
+  - 先在码云上建了一个分支(index-swiper) 然后拉倒本地(git pull) 切换到分支 (git checkout index-swiper) 写代码
   - 轮播图使用的是Vue-Awesome-Swiper 装的版本是2.6.7的
   - 轮播图小点想变成白色 得该样式 但是轮播图内每一项又是一个子组件 由于作用域问题 所以要使用样式穿透(>>>)
   - 网速较慢 时 下面的元素可能会补位上去 所以得先占位 又得符合图片比 
@@ -27,7 +27,7 @@
     + 再将index-swiper合并到主分支 git merge origin/index-swiper
 ---
 ## 首页图标区域导航 (多出图标要能横向区域滚动)
-  - 先在码云上建了一个分支(index-icon) 然后拉倒本地 切换到分支 写代码
+  - 先在码云上建了一个分支(index-icon) 然后拉倒本地(git pull) 切换到分支 (git checkout index-icon) 写代码
   - 先把基础布局写好 再嵌入swiper 让其能在超过8个图标时 能区域滚动
   - 得先把用计算属性将总的图片数组 进行一定的处理
   - 根据总图标个数 将数组分成几个 将总数组遍历 (Math.floor(index/8))
