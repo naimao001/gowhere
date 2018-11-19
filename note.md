@@ -54,6 +54,15 @@
     + 同步完先切换到主分支 git checkout master
     + 再将index-ajax合并到主分支 git merge origin/index-ajax
 ---
-
+## 城市选择页面 头部
+  - 先在码云上建了一个分支(city-router) 然后拉倒本地(git pull) 切换到分支 (git checkout city-router) 写代码
+  - 城市选择路由页面配置好 开始制作头部
+  - 页面基本布局
+  - 首页数据出现bug......待解决
+    - 做完莫得问题就 合并分支 
+    + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
+    + 同步完先切换到主分支 git checkout master
+    + 再将city-router合并到主分支 git merge origin/city-router
+---
 
 
