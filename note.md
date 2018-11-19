@@ -64,5 +64,14 @@
     + 同步完先切换到主分支 git checkout master
     + 再将city-router合并到主分支 git merge origin/city-router
 ---
+## 城市选择页面 搜索框
+  - 先在码云上建了一个分支(city-search) 然后拉倒本地(git pull) 切换到分支 (git checkout city-search) 写代码
+  - 页面基本布局
+  - 首页数据出现bug......待解
+    - 做完莫得问题就 合并分支 
+    + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
+    + 同步完先切换到主分支 git checkout master
+    + 再将city-search合并到主分支 git merge origin/city-search
+---
 
 
