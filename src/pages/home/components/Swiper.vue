@@ -23,14 +23,10 @@ export default {
         //循环播放
         loop: true
       },
-      swiperList:[
-        {id:1,imgUrl:"http://img1.qunarzz.com/piao/fusion/1811/68/c66e4cde1ee62602.jpg_750x200_e9b97acd.jpg"},
-        {id:2,imgUrl:"http://img1.qunarzz.com/piao/fusion/1810/6e/4a5551bbb189d902.jpg_750x200_25257467.jpg"},
-        {id:3,imgUrl:"http://img1.qunarzz.com/piao/fusion/1810/af/30ffcf34e9819f02.jpg_750x200_736b7236.jpg"},
-        {id:4,imgUrl:"http://img1.qunarzz.com/piao/fusion/1806/1c/4847ea66072c7b02.jpg_750x200_c32457fb.jpg"},
-        {id:5,imgUrl:"http://img1.qunarzz.com/piao/fusion/1809/12/856f100069809e02.jpg_750x200_e3485a2b.jpg"}
-      ]
     }
+  },
+  props:{
+    swiperList:Array
   }
 }
 </script>
@@ -45,7 +41,7 @@ export default {
   overflow: hidden;
   width: 100%;
   height: 0;
-  padding-bottom: 27.25%;
+  padding-bottom: 31.25%;
   background: #eee;
 
   .swiper-slide-img {

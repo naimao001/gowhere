@@ -1,7 +1,7 @@
 <template>
   <div class="weekend">
     <h4 class="title">周末去哪儿</h4>
-    <div class="content border-bottom" v-for="item in recommendList" :key="item.id">
+    <div class="content border-bottom" v-for="item in weekendList" :key="item.id">
       <div class="left-img">
         <img :src="item.imgUrl" alt="">
       </div>
@@ -15,29 +15,8 @@
 
 <script>
   export default{
-    data(){
-      return {
-        recommendList:[
-          { 
-            id: 1,
-            imgUrl: "http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg",
-            title: "故宫",
-            desc: "东方宫殿建筑代表，世界宫殿建筑典范"
-          },
-           { 
-            id: 2,
-            imgUrl: "http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg",
-            title: "故宫",
-            desc: "东方宫殿建筑代表，世界宫殿建筑典范"
-          },
-          { 
-            id: 3,
-            imgUrl: "http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg",
-            title: "故宫",
-            desc: "东方宫殿建筑代表，世界宫殿建筑典范"
-          }
-        ]
-      }
+    props:{
+      weekendList:Array
     }
   }
 </script>

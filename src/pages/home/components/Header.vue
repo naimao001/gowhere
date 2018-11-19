@@ -5,13 +5,16 @@
       <i class="iconfont search-icon">&#xe632;</i>
       <input type="search" class="search" placeholder="输入城市/景点/游玩主题">
     </div>
-    <div class="header-right">三亚 <i class="iconfont arrow-down">&#xeb6d;</i></div>
+    <div class="header-right">{{this.city}}<i class="iconfont arrow-down">&#xeb6d;</i></div>
   </div>
 </template>
 
 <script>
 export default {
-  name:'HomeHeader'
+  name:'HomeHeader',
+  props:{
+    city:String
+  }
 }
 </script>
 

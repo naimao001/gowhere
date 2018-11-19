@@ -36,5 +36,24 @@
     + 同步完先切换到主分支 git checkout master
     + 再将index-swiper合并到主分支 git merge origin/index-icon
 ---
+## 首页推荐部分
+  - 先在码云上建了一个分支(index-recommend) 然后拉倒本地(git pull) 切换到分支 (git checkout index-recommend) 写代码
+  - 基本布局
+  - 做完莫得问题就 合并分支 
+    + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
+    + 同步完先切换到主分支 git checkout master
+    + 再将index-recommend合并到主分支 git merge origin/index-recommend
+---
+## 首页数据
+  - 先在码云上建了一个分支(index-ajax) 然后拉倒本地(git pull) 切换到分支 (git checkout index-ajax) 写代码
+  - 安装axios 在Home.vue中发一个请求再将 数剧传到子组件 注意请求要在mounted钩子函数中发 因为要所有组件都渲染完毕后
+  - 然后在static(static中的数据不用上传到远端仓库)中建一个mock目录 存放数据 因为可能要上线的原因不会使用原地址 所以要使用到webpack-dev-sevser提供的代理来转发 请求
+  -  然后通过返回来的数据在传回相应的组件 
+  - 做完莫得问题就 合并分支 
+    + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
+    + 同步完先切换到主分支 git checkout master
+    + 再将index-ajax合并到主分支 git merge origin/index-ajax
+---
+
 
 

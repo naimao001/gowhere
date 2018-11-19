@@ -6,7 +6,7 @@
           <div class="icon-img">
             <img :src="item.imgUrl" alt="">
           </div>
-          <p class="icon-desc">{{item.iconDesc}}</p>
+          <p class="icon-desc">{{item.desc}}</p>
         </div>
 
       </swiper-slide>
@@ -21,19 +21,10 @@ export default {
       swiperOption:{
         autoplay:false
       },
-      picList:[
-        {id:1,imgUrl:"http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png",iconDesc:"景点门票"},
-        {id:2,imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",iconDesc:"北京必游"},
-        {id:3,imgUrl:"http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png",iconDesc:"景点门票"},
-        {id:4,imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",iconDesc:"北京必游"},
-        {id:5,imgUrl:"http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png",iconDesc:"景点门票"},
-        {id:6,imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",iconDesc:"北京必游"},
-        {id:7,imgUrl:"http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png",iconDesc:"景点门票"},
-        {id:8,imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",iconDesc:"北京必游"},
-        {id:9,imgUrl:"http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png",iconDesc:"景点门票"},
-        {id:10,imgUrl:"http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",iconDesc:"北京必游"},
-        ]
     }
+  },
+  props:{
+    iconList:Array
   },
   computed:{
     pages(){
@@ -41,7 +32,7 @@ export default {
       //声明这个数组
       const pages = []
       //遍历这个有所有图片的数组
-      this.picList.forEach((item,index) => {
+      this.iconList.forEach((item,index) => {
         //page 就是 数组下标 index超过8 到9的时候 page就是1了 就说明要生成第二个数组了
         const page = Math.floor(index/8)
         //数组声明 一开始肯定是不存在这个内层数组的 所有要先声明
@@ -72,7 +63,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    margin-top:10px;
     .icon-img {
       width: 55px;
       height: 55px;
