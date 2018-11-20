@@ -13,7 +13,7 @@
           <div class="button-content" v-for="(item) in hotCities" :key="item.id">{{item.name}}</div>
         </div>
       </div>
-      <div class="area" v-for="(item, key) in cities" :key="key">
+      <div class="area" v-for="(item, key) in cities" :key="key" :ref='key'>
         <div class="area-title border-topbottom">{{key}}</div>
         <div class="item-list">
           <div class="item-content border-bottom" v-for="(innerItem) in item" :key="innerItem.id">{{innerItem.name}}</div>
@@ -31,11 +31,21 @@ import BScroll from 'better-scroll'
     },
     props:{
       hotCities:Array,
-      cities:Object
+      cities:Object,
+      letter:String
     },
     mounted() {
        this.scroll = new BScroll(this.$refs.wrapper)
     },
+    watch:{
+      letter(){
+        if(this.letter){
+          //refs拿到的是数组 滚动的那个方法要传的是原生dom 所以加[0]
+          const ele = this.$refs[this.letter][0]
+          this.scroll.scrollToElement(ele)
+        }
+      }
+    }
   }
 </script>
 

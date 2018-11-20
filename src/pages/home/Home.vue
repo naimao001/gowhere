@@ -28,10 +28,10 @@ export default {
   data(){
     return {
       city:'北京',
-      swiperList:'',
-      iconList:'',
-      recommendList:'',
-      weekendList:''
+      swiperList:[],
+      iconList:[],
+      recommendList:[],
+      weekendList:[]
     }
   },
   methods:{
@@ -40,7 +40,7 @@ export default {
         .then(this.indexDataSucc)
     },
     indexDataSucc(res){
-      console.log(res)
+      // console.log(res)
       res = res.data
       if (res.ret && res.data ){
         const data = res.data

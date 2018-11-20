@@ -1,6 +1,6 @@
 <template>
   <ul class="alphabet-list">
-    <li class="item" v-for="(item, key) in cities" :key="key">{{key}}</li>
+    <li class="item" v-for="(item, key) in cities" :key="key" @click="handleClick">{{key}}</li>
   </ul>
 </template>
 
@@ -11,6 +11,10 @@
     },
     props:{
       cities:Object
+    },methods:{
+      handleClick(e){
+        this.$emit('change',e.target.innerText)
+      }
     }
   }
 </script>
@@ -27,8 +31,8 @@
 
   .item {
     line-height: 20px;
-    font-size 16px;
-    color:#00bcd4;
+    font-size: 16px;
+    color: #00bcd4;
   }
 }
 </style>
