@@ -141,3 +141,9 @@
      + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
      + 同步完先切换到主分支 git checkout master
      + 再将city-vuex合并到主分支 git merge origin/city-vuex
+---
+## 使用keepalive优化请求
+  -  先在码云上建了一个分支(city-vuex) 然后拉倒本地(git pull) 切换到分支 (git checkout city-vuex)) 写代码
+  -  发现每次在切换路由时 都会再次发一次请求 不太好 所以可以使用keepalive包裹住router-view 大意是缓存起来
+  -  但是从城市选择页面跳转到首页 如果不是和上次的选一样的城市 那么肯定是要再发一次请求的
+  -  有个对应keepalive的钩子函数 activated 在这里面判断好 再决定是否再次发请求

@@ -36,7 +36,7 @@ export default {
   },
   methods:{
     getIndexData(){
-      axios.get('/api/index.json')
+      axios.get('/api/index.json?city='+this.city)
         .then(this.indexDataSucc)
     },
     indexDataSucc(res){
