@@ -6,17 +6,20 @@
       <input type="search" class="search" placeholder="输入城市/景点/游玩主题">
     </div>
     <router-link to="/city" tag="div">
-      <div class="header-right">{{this.city}}<i class="iconfont arrow-down">&#xeb6d;</i></div>
+      <div class="header-right">{{city}}<i class="iconfont arrow-down">&#xeb6d;</i></div>
     </router-link>
   </div>
 </template>
 
 <script>
+//引入mapState 为了简化代码 在计算属性中展开mapState即可
+import { mapState } from 'vuex'
 export default {
   name:'HomeHeader',
-  props:{
-    city:String
+  computed:{
+    ...mapState(['city'])
   }
+  
 }
 </script>
 

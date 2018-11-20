@@ -4,19 +4,19 @@
       <div class="area">
         <div class="area-title border-topbottom">当前城市</div>
         <div class="button-list">
-          <div id="current-city" class="button-content ">北京</div>
+          <div id="current-city" class="button-content ">{{currentCity}}</div>
         </div>
       </div>
       <div class="area">
         <div class="area-title border-topbottom">热门城市</div>
         <div class="button-list">
-          <div class="button-content" v-for="(item) in hotCities" :key="item.id">{{item.name}}</div>
+          <div class="button-content" @click='handleCurrentClick' v-for="(item) in hotCities" :key="item.id">{{item.name}}</div>
         </div>
       </div>
       <div class="area" v-for="(item, key) in cities" :key="key" :ref='key'>
         <div class="area-title border-topbottom">{{key}}</div>
         <div class="item-list">
-          <div class="item-content border-bottom" v-for="(innerItem) in item" :key="innerItem.id">{{innerItem.name}}</div>
+          <div class="item-content border-bottom" @click='handleCurrentClick' v-for="(innerItem) in item" :key="innerItem.id">{{innerItem.name}}</div>
         </div>
       </div>
     </div>
@@ -24,10 +24,25 @@
 </template>
 
 <script>
+import { mapState,mapMutations} from 'vuex'
 import BScroll from 'better-scroll'
   export default {
     data(){
       return {}
+    },
+    methods:{
+      handleCurrentClick(e){
+        // this.$store.commit('changeCity',e.target.innerText)
+        this.changeCity(e.target.innerText)
+        this.$router.push('/')
+      },
+       ...mapMutations(['changeCity'])
+    },
+    computed:{
+      //也可以是对象的写法 name页面中使用时将是用currentCity
+      ...mapState({
+        currentCity:'city'
+      })
     },
     props:{
       hotCities:Array,
