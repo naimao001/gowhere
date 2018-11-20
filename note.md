@@ -92,7 +92,8 @@
     + 同步完先切换到主分支 git checkout master
     + 再将city-ajax合并到主分支 git merge origin/city-ajax
 ---
-##城市选择页面 逻辑
+##城市选择页面 字母列表逻辑
+  - 先在码云上建了一个分支(city-components) 然后拉倒本地(git pull) 切换到分支 (git checkout city-components) 写代码
   - 点击字母 跳转到相应区域
     + 先在字母组件触发事件(带字母参数)到City组件 然后再将带过来的具体字母传入list组件 
     + list组件因为使用的是better-scroll 他有个方法是 this.scroll.scrollToElement(ele) ele为原生dom 
@@ -109,4 +110,21 @@
       * 函数节流 因为touchmove触发的频率是非常快的 所以可以在data中定义一个timer 
       * 在touchmove处理函数中 将里面的代码放在一个16ms的一次性定时器中 然后用this.timer接收 
       * 在执行定时器前 先清除掉上一次的定时器 即可 达到函数节流的效果
-
+  - 做完莫得问题就 合并分支 
+    + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
+    + 同步完先切换到主分支 git checkout master
+    + 再将city-components合并到主分支 git merge origin/city-components
+---
+##城市选择页面 搜索逻辑
+   - 先在码云上建了一个分支(city-search-logic) 然后拉倒本地(git pull) 切换到分支 (git checkout city-search-logic)) 写代码
+   - 先把搜索列表布局写好 将input文本框值 双向绑定至keyword
+   - watch监视keyword变化(此处用了函数节流) 空值return 定义一个result数组 
+   - 遍历父组件传来的cities 2层循环到 具体城市对象中
+   - 判断keyword是否被城市名拼音包含或是被城市名包含 如果是就将城市名 添加到result 数组中
+   - 然后挂到list中 上面循环list 渲染出列表
+   - 搜索列表出现与否 由keyword是否有值有关 所以直接在searchlist上 v-show='keyword'即可
+   - 多添加了一个li 用于没有此搜索关键字数据时 的提示 跟list是否有值有关 v-show='!list.length'
+   - 做完莫得问题就 合并分支 
+    + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
+    + 同步完先切换到主分支 git checkout master
+    + 再将city-search-logic合并到主分支 git merge origin/city-search-logic
