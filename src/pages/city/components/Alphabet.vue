@@ -25,7 +25,7 @@
         return letters
       }
     },
-    mounted() {
+    updated() {
       // A 字母距离 字母选择框下边框高度 
       this.startY = this.$refs['A'][0].offsetTop
     },
