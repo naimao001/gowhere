@@ -42,6 +42,7 @@ import BScroll from 'better-scroll'
         if(this.letter){
           //refs拿到的是数组 滚动的那个方法要传的是原生dom 所以加[0]
           const ele = this.$refs[this.letter][0]
+          
           this.scroll.scrollToElement(ele)
         }
       }
