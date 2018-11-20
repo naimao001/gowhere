@@ -92,7 +92,7 @@
     + 同步完先切换到主分支 git checkout master
     + 再将city-ajax合并到主分支 git merge origin/city-ajax
 ---
-##城市选择页面 字母列表逻辑
+## 城市选择页面 字母列表逻辑
   - 先在码云上建了一个分支(city-components) 然后拉倒本地(git pull) 切换到分支 (git checkout city-components) 写代码
   - 点击字母 跳转到相应区域
     + 先在字母组件触发事件(带字母参数)到City组件 然后再将带过来的具体字母传入list组件 
@@ -115,7 +115,7 @@
     + 同步完先切换到主分支 git checkout master
     + 再将city-components合并到主分支 git merge origin/city-components
 ---
-##城市选择页面 搜索逻辑
+## 城市选择页面 搜索逻辑
    - 先在码云上建了一个分支(city-search-logic) 然后拉倒本地(git pull) 切换到分支 (git checkout city-search-logic)) 写代码
    - 先把搜索列表布局写好 将input文本框值 双向绑定至keyword
    - watch监视keyword变化(此处用了函数节流) 空值return 定义一个result数组 
@@ -125,6 +125,19 @@
    - 搜索列表出现与否 由keyword是否有值有关 所以直接在searchlist上 v-show='keyword'即可
    - 多添加了一个li 用于没有此搜索关键字数据时 的提示 跟list是否有值有关 v-show='!list.length'
    - 做完莫得问题就 合并分支 
-    + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
-    + 同步完先切换到主分支 git checkout master
-    + 再将city-search-logic合并到主分支 git merge origin/city-search-logic
+     + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
+     + 同步完先切换到主分支 git checkout master
+     + 再将city-search-logic合并到主分支 git merge origin/city-search-logic
+---
+## 城市选择页面 使用Vuex实现城市数据共享
+  - 先在码云上建了一个分支(city-vuex) 然后拉倒本地(git pull) 切换到分支 (git checkout city-vuex)) 写代码
+  - 引入vuex 在src下新建一个 `store` 数据仓库 在入口文件引入并将store挂载在vue实例上 
+  - 将选择的城市存入localstorage (localstorage需要trycatch包裹,因为有些浏览器抽风) 以便再次访问不用重选 
+  - 将state 和 mutations 抽离成单独的js 导出
+  - 再优化写法 嫌$store.state.xxx 太长 那么
+  - 按需导入 `import { mapState } from 'vuex'` 然后再计算属性中展开 `...mapState(['city'])` 就可以直接使用`city了`
+  - 按需导入 `import { mapMutations } from 'vuex'` 然后在方法(methods)中展开 `...mapMutations(['changeCity'])` 就可以直接`this.changeCity(xxx)`了
+  - 做完莫得问题就 合并分支 
+     + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
+     + 同步完先切换到主分支 git checkout master
+     + 再将city-vuex合并到主分支 git merge origin/city-vuex
