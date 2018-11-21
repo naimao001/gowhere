@@ -143,7 +143,24 @@
      + 再将city-vuex合并到主分支 git merge origin/city-vuex
 ---
 ## 使用keepalive优化请求
-  -  先在码云上建了一个分支(city-vuex) 然后拉倒本地(git pull) 切换到分支 (git checkout city-vuex)) 写代码
+  -  先在码云上建了一个分支(city-keepalive) 然后拉倒本地(git pull) 切换到分支 (git checkout city-keepalive)) 写代码
   -  发现每次在切换路由时 都会再次发一次请求 不太好 所以可以使用keepalive包裹住router-view 大意是缓存起来
   -  但是从城市选择页面跳转到首页 如果不是和上次的选一样的城市 那么肯定是要再发一次请求的
   -  有个对应keepalive的钩子函数 activated 在这里面判断好 再决定是否再次发请求
+  - 做完莫得问题就 合并分支 
+     + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
+     + 同步完先切换到主分支 git checkout master
+     + 再将city-keepalive合并到主分支 git merge origin/city-keepalive
+---
+## 详情页 版心布局级画廊组件封装
+  - 先在码云上建了一个分支(detail-banner) 然后拉倒本地(git pull) 切换到分支 (git checkout detail-banner)) 写代码
+  - banner基本布局 
+  - 点击小图片图标 弹出画廊组件 单独封装 以便复用 
+  - //将observe应用于Swiper的父元素。当Swiper的父元素变化时，例如window.resize，Swiper更新。
+      `observer: true`,
+      `observeParents: true`
+  - 做完莫得问题就 合并分支 
+     + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
+     + 同步完先切换到主分支 git checkout master
+     + 再将detail-banner合并到主分支 git merge origin/detail-banner
+---
