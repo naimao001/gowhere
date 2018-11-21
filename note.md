@@ -173,3 +173,14 @@
      + 同步完先切换到主分支 git checkout master
      + 再将detail-header合并到主分支 git merge origin/detail-header
 ---
+## 详情页 票分类列表 及递归组件的使用
+  - 先在码云上建了一个分支(detail-list) 然后拉倒本地(git pull) 切换到分支 (git checkout detail-list)) 写代码
+  - 基本布局 copy...
+  - 组件中定义的name就是在自身再调用自身的组件名 也要传入list数据
+  - 还要是条件渲染 如果有子分组再递归
+  - 做完莫得问题就 合并分支 
+     + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
+     + 同步完先切换到主分支 git checkout master
+     + 再将detail-list合并到主分支 git merge origin/detail-list
+---
+
