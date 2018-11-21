@@ -193,8 +193,24 @@
     + 递归组件时 写在自身标签就是name
     + keepalive排除缓存组件的值
     + Vue-devtools(谷歌插件 调试工具) 中 组件名字 就是这个
+  - 如果路由页面已经滑动底部了 回到首页 重新进入还是那个地方 
+  - 在路由中配置 
+    ```javascript
+     scrollBehavior (to, from, savedPosition) {
+       return { x: 0, y: 0 }
+     }
+    ```
   - 做完莫得问题就 合并分支 
      + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
      + 同步完先切换到主分支 git checkout master
      + 再将detail-ajax合并到主分支 git merge origin/detail-ajax
+---
+## 基本动画组件封装 应用于画廊
+  - 先在码云上建了一个分支(fade-animation) 然后拉倒本地(git pull) 切换到分支 (git checkout fade-animation)) 写代码
+  - 使用了 slot 插槽 
+  - 然后在banner中引入 将画廊组件包裹气即可
+  - 做完莫得问题就 合并分支 
+     + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
+     + 同步完先切换到主分支 git checkout master
+     + 再将fade-animation合并到主分支 git merge origin/fade-animation
 ---
