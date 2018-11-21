@@ -152,7 +152,7 @@
      + 同步完先切换到主分支 git checkout master
      + 再将city-keepalive合并到主分支 git merge origin/city-keepalive
 ---
-## 详情页 版心布局级画廊组件封装
+## 详情页 版心布局及画廊组件封装
   - 先在码云上建了一个分支(detail-banner) 然后拉倒本地(git pull) 切换到分支 (git checkout detail-banner)) 写代码
   - banner基本布局 
   - 点击小图片图标 弹出画廊组件 单独封装 以便复用 
@@ -163,4 +163,13 @@
      + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
      + 同步完先切换到主分支 git checkout master
      + 再将detail-banner合并到主分支 git merge origin/detail-banner
+---
+## 详情页 头部布局及 渐变效果
+  - 先在码云上建了一个分支(detail-header) 然后拉倒本地(git pull) 切换到分支 (git checkout detail-header)) 写代码
+  - 头部基本布局 
+  - 滚动出去60px之后 将头部原来的后退圆箭头隐藏 头部渐变着出现
+  - 做完莫得问题就 合并分支 
+     + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
+     + 同步完先切换到主分支 git checkout master
+     + 再将detail-header合并到主分支 git merge origin/detail-header
 ---
