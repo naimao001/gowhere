@@ -50,7 +50,7 @@
   position: fixed;
   width: 100%;
   line-height: 43px;
-  z-index: 1111;
+  z-index: 99;
 
   .circle-back {
     position: absolute;
