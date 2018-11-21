@@ -5,11 +5,11 @@
       <div class="left-img">
         <img :src="item.imgUrl" alt="">
       </div>
-      <div class="right-content">
-        <p class="content-title">{{item.title}}</p>
+      <router-link to="/detail" class="right-content" tag='div'>
+      <p class="content-title">{{item.title}}</p>
         <p class="content-desc">{{item.desc}}</p>
         <button class="detail-button">查看详情</button>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
