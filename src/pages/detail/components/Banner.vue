@@ -1,18 +1,22 @@
 <template>
   <div>
-    <div class="banner">
+    <div class="banner" @click='handlePicIconClick'>
       <div class="banner-img"><img src="//img1.qunarzz.com/sight/p0/1412/b5/c99be07b7b79cfb5900e03a35bc3051f.water.jpg_600x330_e1187eb8.jpg" alt=""></div>
       <div class="banner-info">
         <p class="banner-title">深圳欢乐谷AAAAA景区</p>
-        <div @click='handlePicIconClick' class="banner-icon"><span class=" iconfont">&#xe694; </span> <span class="pic-num">50</span></div>
+        <div class="banner-icon"><span class=" iconfont">&#xe694; </span> <span class="pic-num">50</span></div>
       </div>
     </div>
+    <animation>
     <gallary @closeGallary='handleGallaryClose' :list='gallaryImgs' v-show='gallaryShow'></gallary>
+    </animation>
   </div>
 </template>
 
 <script>
 import Gallary from 'common/gallary/Gallary'
+import Animation from 'common/fade/Animation'
+
   export default{
     data(){
       return{ 
@@ -25,7 +29,8 @@ import Gallary from 'common/gallary/Gallary'
       gallaryImgs:Array
     },
     components:{
-      Gallary
+      Gallary,
+      Animation
     },
    methods:{
       handlePicIconClick(){

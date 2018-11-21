@@ -167,7 +167,8 @@
 ## 详情页 头部布局及 渐变效果
   - 先在码云上建了一个分支(detail-header) 然后拉倒本地(git pull) 切换到分支 (git checkout detail-header)) 写代码
   - 头部基本布局 
-  - 滚动出去60px之后 将头部原来的后退圆箭头隐藏 头部渐变着出现
+  - 滚动出去60px之后 将头部原来的后退圆箭头隐藏 头部渐变着出现 
+  - 全局事件解绑 
   - 做完莫得问题就 合并分支 
      + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
      + 同步完先切换到主分支 git checkout master
@@ -183,4 +184,17 @@
      + 同步完先切换到主分支 git checkout master
      + 再将detail-list合并到主分支 git merge origin/detail-list
 ---
-
+## 详情页 数据渲染
+  - 先在码云上建了一个分支(detail-ajax) 然后拉倒本地(git pull) 切换到分支 (git checkout detail-ajax)) 写代码
+  - 将数据传到位 
+  - 由于页面是被keepalive缓存了的 但是点不同的项肯定要有不同的数据 
+  - 所以可以在keepalive 上 写 `exclude="Detail"` Detail是组件中定义的name属性的值 
+  - 组件中name属性定义的值 目前知道3种用途
+    + 递归组件时 写在自身标签就是name
+    + keepalive排除缓存组件的值
+    + Vue-devtools(谷歌插件 调试工具) 中 组件名字 就是这个
+  - 做完莫得问题就 合并分支 
+     + 先将此分支代码添加到存储库(git add .) 提交到仓库(git commit -m "") 推送到远程仓库(git push)
+     + 同步完先切换到主分支 git checkout master
+     + 再将detail-ajax合并到主分支 git merge origin/detail-ajax
+---
