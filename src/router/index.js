@@ -20,9 +20,14 @@ export default new Router({
       component: City
     },
     {
-      path: '/detail',
+      path: '/detail/:id',
       name: 'detail',
       component: Detail
-    }
-  ]
+    },
+    
+  ],
+  //每次跳到新路由 就会在页面顶部开始
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })

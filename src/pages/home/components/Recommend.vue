@@ -5,7 +5,7 @@
       <div class="left-img">
         <img :src="item.imgUrl" alt="">
       </div>
-      <router-link to="/detail" class="right-content" tag='div'>
+      <router-link :to="'/detail/' + item.id" class="right-content" tag='div'>
       <p class="content-title">{{item.title}}</p>
         <p class="content-desc">{{item.desc}}</p>
         <button class="detail-button">查看详情</button>
