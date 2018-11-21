@@ -214,3 +214,9 @@
      + 同步完先切换到主分支 git checkout master
      + 再将fade-animation合并到主分支 git merge origin/fade-animation
 ---
+## 真机调试可能出现的bug
+  - 安卓低版本 白屏 
+    + 可能是不支持promise..es6新特性 安装 `npm i babel-polyfill`  在入口文件直接引入 `import 'babel-polyfill'` 即可
+    + 可能是webpack-dev-server问题 放到真正服务器上 打包上线后不会出现
+  - 字母组件那里 向下滑在真机中会 触发下拉刷新 所以要在触摸开始阻止默认行为`@touchstart.prevent` 即可
+
